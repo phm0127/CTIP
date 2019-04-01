@@ -9,8 +9,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-	System.out.println("start");
+	System.out.println("start!");
         System.out.println(new App().getGreeting());
-	Systme.out.println("end");
+	Systme.out.println("end!");
     }
 }
