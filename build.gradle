@@ -16,9 +16,6 @@ plugins {
     apply plugind: 'pmd'
     apply plugind: 'checkstyle'
 
-    id 'checkstyle'
-
-    id 'pmd'
 }
 
 checkstyle {
