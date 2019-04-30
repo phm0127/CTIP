@@ -4,7 +4,9 @@
 package CTIP;
 
 public class App {
+    int a;  //NO use
     public String getGreeting() {
+        
         return "Hello world.";
     }
 
