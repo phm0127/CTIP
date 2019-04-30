@@ -45,6 +45,7 @@ pmd {
 pmdMain {
     reports {
         xml.destination = file("${pmd.reportsDir}/pmd-report.xml")
+        html.enabled = false;
         xml.enabled = true
     }
 }
