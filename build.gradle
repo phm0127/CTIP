@@ -14,14 +14,14 @@ plugins {
     // Apply the application plugin to add support for building an application
     id 'application'
 
-    id 'pmd'
+    //id 'pmd'
     
-    id 'checkstyle'
+   // id 'checkstyle'
    // 
    // 
 }
 
-
+apply plugin: 'checkstyle'
 
     
 checkstyle {
@@ -40,19 +40,14 @@ checkstyleMain {
 apply plugin: 'pmd'
  
 pmd {
-    toolVersion = '5.5.1' // PMD 버전별로 버그가 있을 수 있어 버그 없는 특정 버전을 명시해야 할 수 있음.
-    ignoreFailures = true // 위반이 있어도 report만하고 넘어감
+  ignoreFailures = true // 분석결과 예외가 발생하면 빌드실패 발생시키는 것을 제외
+    reportsDir = file("${buildDir}/pmd-output")
 }
  
-// 혹은
-tasks.withType(Pmd) {
-    ignoreFailures = true
-    ruleSetFiles = rootProject.files("/path/to/pmd.xml")
-    exclude "package/to/querydsl/**/Q*.java" // excludes ...
- 
+pmdMain {
     reports {
-        xml.enabled true
-        html.enabled false
+        xml.destination = file("${pmd.reportsDir}/pmd-report.xml")
+        xml.enabled = true
     }
 }
 
