@@ -40,7 +40,7 @@ checkstyleMain {
 apply plugin: 'pmd'
  
 pmd {
-    toolVersion = '5.2.1' // PMD 버전별로 버그가 있을 수 있어 버그 없는 특정 버전을 명시해야 할 수 있음.
+    toolVersion = '5.5.1' // PMD 버전별로 버그가 있을 수 있어 버그 없는 특정 버전을 명시해야 할 수 있음.
     ignoreFailures = true // 위반이 있어도 report만하고 넘어감
 }
  
