@@ -14,14 +14,13 @@ plugins {
     // Apply the application plugin to add support for building an application
     id 'application'
 
-    //id 'pmd'
+    id 'pmd'
     
-   // id 'checkstyle'
-   // 
-   // 
+    id 'checkstyle'
+    
+    
 }
 
-apply plugin: 'checkstyle'
 
     
 checkstyle {
@@ -37,7 +36,6 @@ checkstyleMain {
 }
 
 
-apply plugin: 'pmd'
  
 pmd {
   ignoreFailures = true // 분석결과 예외가 발생하면 빌드실패 발생시키는 것을 제외
