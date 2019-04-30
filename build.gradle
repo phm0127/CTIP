@@ -21,8 +21,8 @@ plugins {
    // 
 }
 
-apply plugind: 'pmd'
-apply plugind: 'checkstyle'
+
+
     
 checkstyle {
   ignoreFailures = true // 분석결과 예외가 발생하면 빌드실패 발생시키는 것을 제외
@@ -37,17 +37,25 @@ checkstyleMain {
 }
 
 
+apply plugin: 'pmd'
+ 
 pmd {
-  ignoreFailures = true // 분석결과 예외가 발생하면 빌드실패 발생시키는 것을 제외
-    reportsDir = file("${buildDir}/pmd-output")
+    toolVersion = '5.5.1' // PMD 버전별로 버그가 있을 수 있어 버그 없는 특정 버전을 명시해야 할 수 있음.
+    ignoreFailures = true // 위반이 있어도 report만하고 넘어감
 }
  
-pmdMain {
+// 혹은
+tasks.withType(Pmd) {
+    ignoreFailures = true
+    ruleSetFiles = rootProject.files("/path/to/pmd.xml")
+    exclude "package/to/querydsl/**/Q*.java" // excludes ...
+ 
     reports {
-        xml.destination = file("${pmd.reportsDir}/pmd-report.xml")
-        xml.enabled = true
+        xml.enabled true
+        html.enabled false
     }
 }
+
 
 
 repositories {
