@@ -11,6 +11,9 @@ public class App {
     }
 
     public static void main(String[] args) {
+        int b;
+        b=2;
+        b=3;
         System.out.println(new App().getGreeting());
     }
 }
