@@ -18,6 +18,7 @@ plugins {
     
     id 'checkstyle'
     
+    id 'findbugs'
     
 }
 
@@ -49,6 +50,19 @@ pmdMain {
         xml.enabled = true
     }
 }
+findbugs {
+          ignoreFailures = true
+          reportsDir = file("${buildDir}/findbugs-output")
+     }
+
+findbugsMain {
+     reports {
+          xml.enabled = true
+          html.enabled = false
+          xml.destination = file("${findbugs.reportsDir}/findbugs-report.xml")
+     }
+}
+
 
 
 
