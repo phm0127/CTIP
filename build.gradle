@@ -17,8 +17,8 @@ plugins {
    // id 'pmd'
     
    // id 'checkstyle'
-    apply plugind: 'pmd'
-    apply plugind: 'checkstyle'
+   // apply plugind: 'pmd'
+   // apply plugind: 'checkstyle'
 }
 
     
