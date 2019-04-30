@@ -17,10 +17,12 @@ plugins {
     id 'pmd'
     
     id 'checkstyle'
-   // apply plugind: 'pmd'
-   // apply plugind: 'checkstyle'
+   // 
+   // 
 }
 
+apply plugind: 'pmd'
+apply plugind: 'checkstyle'
     
 checkstyle {
   ignoreFailures = true // 분석결과 예외가 발생하면 빌드실패 발생시키는 것을 제외
